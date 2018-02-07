@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -8,46 +9,78 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.MainController">
    <children>
-      <ImageView fx:id="bookPicture" fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="29.0" onMouseClicked="#openCrudForBook" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/book.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="clientPicture" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="29.0" onMouseClicked="#openCrudForClient" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/client.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="reportPicture" fitHeight="150.0" fitWidth="200.0" layoutX="330.0" layoutY="200.0" onMouseClicked="#openReports" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/report.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="journalPicture" fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="200.0" onMouseClicked="#openCrudForJournal" pickOnBounds="true" preserveRatio="true">
-         <effect>
-            <DropShadow />
-         </effect>
-         <image>
-            <Image url="@../images/journal.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Label layoutX="132.0" layoutY="179.0" text="Books" />
-      <Label layoutX="386.0" layoutY="179.0" text="Clients" />
-      <Label layoutX="132.0" layoutY="358.0" text="Journal" />
-      <Label layoutX="386.0" layoutY="358.0" text="Reports" />
+      <Pane layoutX="65.0" layoutY="14.0" prefHeight="163.0" prefWidth="139.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <ImageView fx:id="bookPicture" fitHeight="119.0" fitWidth="108.0" layoutX="14.0" layoutY="36.0" onMouseClicked="#openCrudForBook" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/book.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="37.0" layoutY="12.0" text="BOOKS">
+               <font>
+                  <Font name="Helvetica" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="239.0" layoutY="14.0" prefHeight="163.0" prefWidth="139.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <ImageView fx:id="journalPicture" fitHeight="101.0" fitWidth="101.0" layoutX="20.0" layoutY="41.0" onMouseClicked="#openCrudForJournal" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <image>
+                  <Image url="@../images/journal.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="25.0" layoutY="12.0" text="JOURNAL">
+               <font>
+                  <Font name="Helvetica" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="407.0" layoutY="14.0" prefHeight="163.0" prefWidth="139.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <ImageView fx:id="clientPicture" fitHeight="101.0" fitWidth="101.0" layoutX="18.0" layoutY="41.0" onMouseClicked="#openCrudForClient" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/client.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="29.0" layoutY="14.0" text="CLIENTS">
+               <font>
+                  <Font name="Helvetica" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="402.0" layoutY="327.0" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: #96e3c3;">
+         <children>
+            <ImageView fx:id="reportPicture" fitHeight="42.0" fitWidth="42.0" layoutX="100.0" layoutY="7.0" onMouseClicked="#openReports" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/report.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="9.0" layoutY="18.0" text="REPORTS">
+               <font>
+                  <Font name="Helvetica" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
