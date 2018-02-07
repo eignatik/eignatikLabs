@@ -6,20 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.CrudController">
+<AnchorPane prefHeight="480.0" prefWidth="706.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.CrudController">
    <children>
-      <TableView fx:id="tableView" layoutX="33.0" layoutY="32.0" onMousePressed="#checkSelectedItem" onMouseClicked="#checkSelectedItem" prefHeight="416.0" prefWidth="523.0">
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="32.0" onMouseClicked="#checkSelectedItem" onMousePressed="#checkSelectedItem" prefHeight="416.0" prefWidth="523.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="addNewButton" layoutX="580.0" layoutY="34.0" mnemonicParsing="false" onAction="#openAddingDialog" text="ADD NEW" />
-      <Button fx:id="editButton" layoutX="580.0" layoutY="85.0" mnemonicParsing="false" onAction="#openEditingDialog" prefHeight="27.0" prefWidth="80.0" text="EDIT" />
-      <Button fx:id="deleteButton" layoutX="580.0" layoutY="142.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="27.0" prefWidth="80.0" text="DELETE" />
-      <Pane fx:id="returnPanel" disable="true" layoutX="562.0" layoutY="183.0" prefHeight="135.0" prefWidth="130.0">
+      <Button fx:id="addNewButton" layoutX="580.0" layoutY="32.0" mnemonicParsing="false" onAction="#openAddingDialog" styleClass="shiny-green" text="ADD NEW" />
+      <Button fx:id="editButton" layoutX="580.0" layoutY="85.0" mnemonicParsing="false" onAction="#openEditingDialog" prefHeight="27.0" prefWidth="106.0" styleClass="shiny-orange" text="EDIT" />
+      <Button fx:id="deleteButton" layoutX="580.0" layoutY="142.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="38.0" prefWidth="106.0" styleClass="shiny-red" text="DELETE" />
+      <Pane fx:id="returnPanel" disable="true" layoutX="567.0" layoutY="311.0" prefHeight="135.0" prefWidth="130.0" style="-fx-background-color: #f2f2f2;">
          <children>
-            <Button fx:id="returnButton" layoutX="14.0" layoutY="94.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="27.0" prefWidth="108.0" text="Return" />
+            <Button fx:id="returnButton" layoutX="14.0" layoutY="94.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="27.0" prefWidth="108.0" styleClass="shiny-orange" text="Return" />
             <Label layoutX="14.0" layoutY="14.0" text="Book  returning" />
             <DatePicker fx:id="returnDatePicker" layoutX="11.0" layoutY="41.0" prefHeight="27.0" prefWidth="108.0" />
          </children>

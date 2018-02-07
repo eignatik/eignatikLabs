@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="333.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.AddEditController">
+<AnchorPane prefHeight="333.0" prefWidth="244.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.AddEditController">
    <children>
       <Group fx:id="bookGroup" visible="false">
          <children>
@@ -31,7 +31,7 @@
             </ComboBox>
          </children>
       </Group>
-      <Button fx:id="saveButton" layoutX="94.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#saveItem" text="Save" />
+      <Button fx:id="saveButton" layoutX="88.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#saveItem" styleClass="shiny-green" text="Save" />
       <Label fx:id="savedLabel" layoutX="34.0" layoutY="288.0" style="-fx-background-color: #c5ffb2;" text="Saved successfully!" wrapText="true" />
       <Group fx:id="clientGroup" visible="false">
          <children>

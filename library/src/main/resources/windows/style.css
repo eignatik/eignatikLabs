@@ -1,0 +1,73 @@
+#dark-blue {
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+}
+
+.shiny-orange {
+    -fx-background-color:
+            linear-gradient(#fefff6, #e4e6e4),
+            linear-gradient(#fafff4, #ebf2f2),
+            linear-gradient(#fefff9, #e7eaef),
+            linear-gradient(#fbffff 0%, #f7f8f6 50%, #eaeeec 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #636564;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+.shiny-green {
+    -fx-background-color:
+            linear-gradient(#80ff9d, #66e67d),
+            linear-gradient(#6fff93, #64f26f),
+            linear-gradient(#6fff93, #64f26f),
+            linear-gradient(#6fff93 0%, #7df881 50%, #64f26f 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(188, 255, 202, 0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #898f8e;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+.shiny-red {
+    -fx-background-color:
+            linear-gradient(#b04848, #8f2932),
+            linear-gradient(#b04848, #8f2932),
+            linear-gradient(#b04848, #8f2932),
+            linear-gradient(#b04848 0%, #9c2d37 50%, #8f2932 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(143, 41, 50, 0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #e3eceb;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+.input {
+    -fx-background-color:
+            linear-gradient(#ffffff, #b7c6c5),
+            linear-gradient(#fafff4, #ebf2f2),
+            linear-gradient(#fefff9, #e7eaef),
+            linear-gradient(#fbffff 0%, #f7f8f6 10%, #eaeeec 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #636564;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}

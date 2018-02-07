@@ -7,12 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="296.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.ReportsController">
+<AnchorPane prefHeight="296.0" prefWidth="469.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.ReportsController">
    <children>
       <Pane layoutX="14.0" layoutY="14.0" prefHeight="275.0" prefWidth="443.0">
          <children>
-            <Button fx:id="report" defaultButton="true" layoutX="329.0" layoutY="241.0" mnemonicParsing="false" onAction="#createReport" style="-fx-background-color: green;" text="Create report" textFill="#f2f2f2">
+            <Button fx:id="report" defaultButton="true" layoutX="1.0" layoutY="231.0" mnemonicParsing="false" onAction="#createReport" prefHeight="38.0" prefWidth="443.0" styleClass="shiny-green" text="Create report" textFill="#f2f2f2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
