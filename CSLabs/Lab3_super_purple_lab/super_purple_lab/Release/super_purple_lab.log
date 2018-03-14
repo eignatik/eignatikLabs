@@ -1,0 +1,8 @@
+﻿  main.cpp
+main.cpp(139): warning C4101: 'n': unreferenced local variable
+  Generating code
+  2 of 7 functions (28.6%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  super_purple_lab.vcxproj -> C:\Users\grcomerce\Documents\Visual Studio 2015\Projects\EVM\super_purple_lab\Release\super_purple_lab.exe

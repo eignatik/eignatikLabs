@@ -1,0 +1,61 @@
+// Mol-8.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <conio.h> 
+#include <windows.h>
+#include "inc\fmod.hpp"
+#include "inc\fmod_errors.h"
+#include <iostream>
+#pragma comment(lib, "fmodex_vc.lib")
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+// FMOD 4	
+FMOD_RESULT result;
+FMOD::System * system; 
+result = FMOD::System_Create(&system);
+result = system->init(16, FMOD_INIT_NORMAL, 0);
+FMOD::Sound * sound; // sound
+FMOD::Channel * channel; // sound channel
+result = system->createSound("ns.mp3", FMOD_3D, 0, &sound); // creating sound
+result = system->playSound(FMOD_CHANNEL_FREE, sound, false, &channel);
+//result = channel->setPaused(false);
+//getch();
+
+FMOD::Reverb	 *reverb;
+result = system->createReverb(&reverb);
+FMOD_REVERB_PROPERTIES prop2 = FMOD_PRESET_CONCERTHALL;
+reverb->setProperties(&prop2);
+
+
+for (int i=0; i<100000; i++) {
+	FMOD_VECTOR pos = { 0, 0, 0 };
+	float mindist = 20.0f;
+	float maxdist = 20.0f;
+	reverb->set3DAttributes(&pos, mindist, maxdist);
+
+	FMOD_VECTOR listenerpos = { 0, 0, 0 };
+	listenerpos.x = sin(i / 100.0f) * 3;
+	listenerpos.y = cos(i / 100.0f) * 3;
+	result = system->set3DListenerAttributes(0 ,&listenerpos, 0, 0, 0);
+	result = system->update();
+	Sleep(10);
+}
+
+
+
+
+
+
+ //playing sound (assigning it to a channel)
+ //channel->setPaused(false); // actually play sound
+
+
+
+getch();
+
+	return 0;
+}
+

@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\psycr\dropbox\polytech second course\wav\wav\main.cpp(8): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\psycr\dropbox\polytech second course\wav\wav\main.cpp(8): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\psycr\dropbox\polytech second course\wav\wav\main.cpp(26): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\psycr\dropbox\polytech second course\wav\wav\main.cpp(135): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  Wav.vcxproj -> C:\Users\psycr\Dropbox\Polytech Second Course\Wav\Debug\Wav.exe
+  Wav.vcxproj -> C:\Users\psycr\Dropbox\Polytech Second Course\Wav\Debug\Wav.pdb (Full PDB)

@@ -1,0 +1,7 @@
+﻿  MMX-SSE.cpp
+c:\users\grcomerce\desktop\mmx_sse1\mmx-sse.cpp(22): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\grcomerce\desktop\mmx_sse1\mmx-sse.cpp(116): warning C4752: found Intel(R) Advanced Vector Extensions; consider using /arch:AVX
+c:\users\grcomerce\desktop\mmx_sse1\mmx-sse.cpp(138): warning C4799: function 'main' has no EMMS instruction
+MMX-SSE.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  MMX_SSE.vcxproj -> C:\Users\grcomerce\Desktop\MMX_SSE1\Debug\MMX_SSE.exe
+  MMX_SSE.vcxproj -> Debug\MMX_SSE.pdb (Full PDB)
