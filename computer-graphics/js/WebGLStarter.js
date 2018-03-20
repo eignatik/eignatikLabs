@@ -22,18 +22,7 @@ let WebGLStarter = {
 
         const shaderProgram = WebGLStarter.initShaders(gl, vsSource, fsSource);
 
-        const programInfo = {
-            program: shaderProgram,
-            attribLocations: {
-                vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition'),
-            },
-            uniformLocations: {
-                projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
-                modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
-            },
-        };
-
-        WebGLStarter.drawScene(gl, programInfo, WebGLStarter.initBuffers(gl));
+        WebGLStarter.drawScene(gl, WebGLStarter.getProgramInfo(gl, shaderProgram), WebGLStarter.initBuffers(gl));
     },
 
     getContext: (canvas) => {
@@ -55,6 +44,20 @@ let WebGLStarter = {
             WebGLStarter.loadShader(gl, gl.VERTEX_SHADER, vertex),
             WebGLStarter.loadShader(gl, gl.FRAGMENT_SHADER, fragment)
         );
+    },
+
+    getProgramInfo: (gl, shaderProgram) => {
+        return {
+            program: shaderProgram,
+            attribLocations: {
+                vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition'),
+            },
+            uniformLocations: {
+                projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
+                modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
+            },
+        };
+
     },
 
     drawScene: (gl, info, buffer) => {
@@ -87,7 +90,7 @@ let WebGLStarter = {
 
 
         {
-            const numComponents = 2;
+            const numComponents = 3;
             const type = gl.FLOAT;
             const normalize = false;
             const stride = 0;
@@ -120,31 +123,63 @@ let WebGLStarter = {
         );
 
         {
+            const vertexCount = 36;
+            const type = gl.UNSIGNED_SHORT;
             const offset = 0;
-            const vertexCount = 4;
-            gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+            gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
         }
     },
 
     initBuffers: (gl) => {
         const positionBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-
-        const positions = [
-            1.0, 1.0,
-            -1.0, 1.0,
-            1.0, -1.0,
-            -1.0, -1.0
-        ];
-
         gl.bufferData(
             gl.ARRAY_BUFFER,
-            new Float32Array(positions),
+            new Float32Array(Shapes.getCube()),
             gl.STATIC_DRAW
         );
 
+        const indices = [
+            0,  1,  2,      0,  2,  3,
+            4,  5,  6,      4,  6,  7,
+            8,  9,  10,     8,  10, 11,
+            12, 13, 14,     12, 14, 15,
+            16, 17, 18,     16, 18, 19,
+            20, 21, 22,     20, 22, 23,
+        ];
+
+        // Now send the element array to GL
+        const indexBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
+            new Uint16Array(indices), gl.STATIC_DRAW);
+
+        const faceColors = [
+            [1.0,  1.0,  1.0,  1.0],    // Front face: white
+            [1.0,  0.0,  0.0,  1.0],    // Back face: red
+            [0.0,  1.0,  0.0,  1.0],    // Top face: green
+            [0.0,  0.0,  1.0,  1.0],    // Bottom face: blue
+            [1.0,  1.0,  0.0,  1.0],    // Right face: yellow
+            [1.0,  0.0,  1.0,  1.0],    // Left face: purple
+        ];
+
+        // Convert the array of colors into a table for all the vertices.
+
+        let colors = [];
+
+        for (let j = 0; j < faceColors.length; ++j) {
+            const c = faceColors[j];
+            colors = colors.concat(c, c, c, c);
+        }
+
+        const colorBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+
         return {
             position: positionBuffer,
+            indices: indexBuffer,
+            color: colorBuffer,
         };
     },
 
