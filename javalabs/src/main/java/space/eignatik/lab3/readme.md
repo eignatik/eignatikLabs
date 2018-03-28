@@ -23,4 +23,4 @@ PropertyHelper
 
 ## Using through command line
 
-`javac `
+`java Main pathToFile/filaname.properties propertyName`
