@@ -11,10 +11,21 @@ public class HappyFarm {
     private static int DEFAULT_PLANTS_NUMBER = 10;
     private static volatile int currentPlantNumber;
 
+    private HappyFarm() {}
+
+    /**
+     * Initiates the process of plants deployment with number of plants according to input value
+     * @param numberOfPlants int:: number of plants to be planted
+     * @throws InterruptedException because of Thread::wait calls
+     */
     public static void deployPlants(int numberOfPlants) throws InterruptedException {
-        deploy(numberOfPlants);
+        deploy(numberOfPlants <= 0 ? DEFAULT_PLANTS_NUMBER : numberOfPlants);
     }
 
+    /**
+     * Initiates the process of plants deployment with default number of plants
+     * @throws InterruptedException because of Thread::wait calls
+     */
     public static void deployPlants() throws InterruptedException {
         deploy(DEFAULT_PLANTS_NUMBER);
     }
@@ -26,7 +37,9 @@ public class HappyFarm {
             throw new IllegalArgumentException("number of plants should be more than 0");
         }
 
-        Thread worker1, worker2, worker3;
+        Thread worker1;
+        Thread worker2;
+        Thread worker3;
 
         for (int i = 0; i < DEFAULT_PLANTS_NUMBER; i++) {
             worker1 = new Thread(new Digger());

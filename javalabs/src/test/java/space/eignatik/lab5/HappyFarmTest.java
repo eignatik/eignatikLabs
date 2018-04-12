@@ -5,7 +5,12 @@ import org.testng.annotations.Test;
 public class HappyFarmTest {
 
     @Test
-    public void testWorkers() throws InterruptedException {
+    public void testDeployWithDefaultValue() throws InterruptedException {
         HappyFarm.deployPlants();
+    }
+
+    @Test
+    public void testDeployWithCustomValue() throws InterruptedException {
+        HappyFarm.deployPlants(20);
     }
 }
