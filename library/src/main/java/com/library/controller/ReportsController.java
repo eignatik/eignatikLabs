@@ -54,12 +54,16 @@ public class ReportsController extends BaseController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<Reports> reportKinds = Arrays.asList(Reports.RETURNED_WITH_FINES, Reports.IN_RANGE, Reports.NOT_RETURNED);
+        List<String> reportKinds = List.of(
+                Reports.RETURNED_WITH_FINES.getValue(),
+                Reports.IN_RANGE.getValue(),
+                Reports.NOT_RETURNED.getValue());
         reportPicker.setItems(FXCollections.observableArrayList(reportKinds));
     }
 
     public void showReportPanel() {
-        currentReportType = (Reports) reportPicker.getSelectionModel().getSelectedItem();
+        String selection = (String) reportPicker.getSelectionModel().getSelectedItem();
+        currentReportType = Reports.getByValue(selection);
         switch (currentReportType) {
             case RETURNED_WITH_FINES:
                 outOfDate.setVisible(true);
@@ -180,6 +184,15 @@ public class ReportsController extends BaseController implements Initializable {
 
         public String getValue() {
             return value;
+        }
+
+        public static Reports getByValue(String value) {
+            switch (value) {
+                case "Books that have been returned after end date" : return RETURNED_WITH_FINES;
+                case "Journal records in specified time range" : return IN_RANGE;
+                case "Clients who haven't return their books" : return NOT_RETURNED;
+                default: throw new RuntimeException("No available reports for type " + value);
+            }
         }
     }
 }

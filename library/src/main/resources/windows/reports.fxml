@@ -19,12 +19,12 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
-            <ComboBox fx:id="reportPicker" layoutX="14.0" layoutY="14.0" onAction="#showReportPanel" prefHeight="27.0" prefWidth="413.0" promptText="Select report type" />
+            <ComboBox fx:id="reportPicker" layoutX="1.0" layoutY="14.0" onAction="#showReportPanel" prefHeight="27.0" prefWidth="443.0" promptText="Select report type" />
             <Pane fx:id="rangeReport" layoutX="14.0" layoutY="82.0" prefHeight="160.0" prefWidth="413.0" visible="false">
                <children>
                   <DatePicker fx:id="fromDate" layoutX="8.0" layoutY="87.0" promptText="From date" />
                   <DatePicker fx:id="toDate" layoutX="216.0" layoutY="87.0" promptText="To date" />
-                  <Label layoutX="14.0" layoutY="14.0" text="Report all users that took books between two dates" wrapText="true" />
+                  <Label layoutX="9.0" layoutY="14.0" prefHeight="65.0" prefWidth="399.0" text="Get all users that took books between two dates. Specify dates using following datepickers" wrapText="true" />
                </children>
             </Pane>
             <Pane fx:id="outOfDate" layoutX="14.0" layoutY="81.0" prefHeight="160.0" prefWidth="413.0" visible="false">
@@ -32,12 +32,12 @@
                   <Label layoutX="14.0" layoutY="14.0" text="Select all clients that returned books after end date." />
                </children>
             </Pane>
-            <Label layoutX="20.0" layoutY="53.0" text="Report description and options:" />
+            <Label layoutX="20.0" layoutY="53.0" text="Report description and options:" underline="true" />
             <Pane fx:id="didntReturn" layoutX="20.0" layoutY="82.0" prefHeight="153.0" prefWidth="413.0" visible="false">
                <children>
-                  <Label layoutX="9.0" layoutY="5.0" text="Report all clients that didn't return books." />
+                  <Label layoutX="9.0" layoutY="5.0" text="Get all clients that haven't return books yet." />
                   <DatePicker fx:id="rangePicker" disable="true" layoutX="14.0" layoutY="77.0" />
-                  <Label layoutX="14.0" layoutY="52.0" text="You can specify top range date " />
+                  <Label layoutX="14.0" layoutY="52.0" text="Optional: you can specify top range date " />
                   <CheckBox fx:id="dateFilter" layoutX="221.0" layoutY="82.0" mnemonicParsing="false" onAction="#disableDataPicker" text="Use date filter" />
                </children>
             </Pane>
