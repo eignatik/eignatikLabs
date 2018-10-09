@@ -5,8 +5,13 @@ import org.apache.logging.log4j.LogManager;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+
+import static java.time.LocalDateTime.now;
 
 public class ReportWriter {
     private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger(ReportWriter.class);
@@ -35,7 +40,10 @@ public class ReportWriter {
                     fileWriter.append(" ");
                 }
                 fileWriter.append(COMA_SEPARATOR);
-                long fine = (ChronoUnit.DAYS.between(journal.getEndDate(), journal.getReturnDate()))
+                LocalDate currentDate = LocalDate.now();
+                long fine = (ChronoUnit.DAYS.between(
+                        journal.getEndDate(),
+                        journal.getReturnDate() == null ? currentDate : journal.getReturnDate()))
                         * journal.getBook().getBookType().getFinePerDay();
                 if (fine < 0) {
                     fine = 0;
